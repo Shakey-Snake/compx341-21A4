@@ -26,12 +26,18 @@ export class CategoryGallery extends React.Component<CategoryGalleryProps, Categ
   async componentDidMount() {
     try {
       const books = await this.listBooks();
+      books.sort((a: { name: string; }, b: { name: string; }) => (a.name > b.name) ? 1 : -1);
       this.setState({ books });
+
     } catch (e) {
       alert(e);
     }
 
     this.setState({ isLoading: false });
+  }
+
+  bookList() {
+    return this.state.books;
   }
 
   listBooks() {

@@ -25,6 +25,7 @@ export class CategoryGalleryTeaser extends React.Component<CategoryGalleryTeaser
   async componentDidMount() {
     try {
       const books = await this.listBooks();
+      books.sort((a: { name: string; }, b: { name: string; }) => (a.name > b.name) ? 1 : -1);
       this.setState({ books });
     } catch (e) {
       alert(e);
