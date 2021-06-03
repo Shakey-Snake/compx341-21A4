@@ -1,3 +1,5 @@
+//Student Name: Reece Brown
+//Student ID: 1365178
 export default {
   MAX_ATTACHMENT_SIZE: 5000000,
   apiGateway: {
